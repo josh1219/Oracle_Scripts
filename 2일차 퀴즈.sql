@@ -1,3 +1,9 @@
+desc employee;
+select * from employee;
+
+select eno as 사원번호, ename 사원명, job 직책, manager "직속상관 ID", hiredate 입사날짜, salary 월급, commission 보너스, dno 부서번호
+from employee;
+
 -- 1. 덧셈 연산자를 사용하여 모든 사원에 대해서 $300의 급여 인상을 계산한후 사원이름, 급여, 인상된 급여를 출력하세요.
 select ename, salary, salary+300
 from employee;
@@ -8,9 +14,9 @@ from employee
 order by salary desc;
 
 -- 3. 급여가 2000을 넘는 사원의 이름과 급여를 급여가 많은것 부터 작은순으로 출력하세요. 
-select ename, salary
-from employee
-where salary >= 2000
+select ename, salary    -- 컬럼명
+from employee           -- 테이블, 뷰
+where salary >= 2000    -- 조건
 order by salary desc;
 
 -- 4. 사원번호가 7788인 사원의 이름과 부서번호를 출력하세요. 
@@ -22,7 +28,7 @@ where eno = 7788;
 
 select ename, salary
 from employee
-where not salary >= 2000 and salary < 3000;
+where salary < 2000 or salary > 3000;
 
 -- 6. 1981년 2월 20일부터 81년 5월 1일 사이의 입사한 사원의 이름 담당업무, 입사일을 출력하시오
 select ename, job, hiredate
