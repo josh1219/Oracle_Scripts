@@ -58,7 +58,7 @@ group by dno;
 select * from employee;
 select * from department;
 -- 1. EQUI 조인을 사용하여 SCOTT 사원의 부서 번호와 부서 이름을 출력 하시오. 
-select ename, dno, dname
+select ename, e.dno, dname
 from employee e, department d
 where e.dno = d.dno
 and ename = 'SCOTT';
@@ -69,6 +69,13 @@ from employee e JOIN department d
 on e.dno = d.dno;
 
 -- 3. INNER JOIN과 USING 연산자를 사용하여 10번 부서에 속하는 모든 담당 업무의 고유한 목록(한번씩만 표시)을 부서의 지역명을 포함하여 출력 하시오. 
+desc employee;
+desc department;
+
+select dno, job, loc
+from employee e inner join department d
+using(dno)
+where dno = 10;
 
 -- 4. NATUAL JOIN을 사용하여 커밋션을 받는 모든 사원의 이름, 부서이름, 지역명을 출력 하시오. 
 select ename, dname, loc       
