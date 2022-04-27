@@ -120,18 +120,24 @@ select * from EMP_COPY where eno = '7788' ;
 select * from EMP_COPY where eno = '7499' ;
 
 update EMP_COPY
-set job = 'SALEMAN',salary = 1600
+set job = (select job from EMP_COPY where eno = '7499'),salary=(select salary from EMP_COPY where eno = '7499')
 where eno = 7788;
 commit;
 
 7. 사원번호 7369와 업무가 동일한 사원의 부서번호를 사원 7369의 현재 부서번호로 갱신 하시오. [ EMP_COPY 테이블 사용]
 
-select * from EMP_COPY where eno = '7369' ;
+select * from EMP_COPY where job = 'CLERK';
 
 update EMP_COPY
 set dno = 20
 where job ='CLERK' ;
 commit;
+
+update EMP_COPY
+set dno = (select dno from EMP_COPY where eno = '7369' )
+where job =(select job from EMP_COPY where eno = '7369' ) ;
+commit;
+
 
 8. department 테이블의 구조와 내용을 복사하여 DEPT_COPY 란 이름의 테이블을 만드시오. 
 

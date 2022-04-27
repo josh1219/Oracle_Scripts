@@ -95,9 +95,9 @@ Create table orders (
     product_size varchar2(5),
     quantity varchar2(5),
     result char(1),
-    indate date,
-    constraint FK_orders_product_code Foreign Key (product_code) references products (product_code),
-    constraint FK_orders_id_member Foreign Key (id) references member(id)
+    indate date
+  --  constraint FK_orders_product_code Foreign Key (product_code) references products (product_code),
+  --  constraint FK_orders_id_member Foreign Key (id) references member(id)
     );
     
 insert into orders
