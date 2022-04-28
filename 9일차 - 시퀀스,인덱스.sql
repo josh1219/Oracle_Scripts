@@ -315,3 +315,6 @@ temporary tablespace temp
 
 Alter user usertest02
 quota 2m on users;
+
+select * from All_tables    -- 테이블의 소유주를 출력 해준다. 계정별로 소유한 테이블을 출력 할 수 있다.
+where owner in ('HR', 'USERTEST01', 'USERTEST02');

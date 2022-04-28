@@ -141,6 +141,11 @@ select * from v_sal_emp
 
 5. 이미 생성된 뷰( v_em_dno ) 에 대해서 << 읽기 전용 뷰 >>로 수정하시오. 
 
+create or replace view v_sal_emp
+as
+select min(salary) MIN, max(salary) MAX, round(avg(salary),2) AVG, sum(salary) SUM
+from emp_view
+group by dno with read only;
 
 
 
