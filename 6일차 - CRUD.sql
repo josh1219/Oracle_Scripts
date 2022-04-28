@@ -39,7 +39,7 @@ insert into 테이블명
 values ( 값1, 값2, 값3, ...);
 
 */
-
+desc dept;
 
 
 --DML 적용해보기
