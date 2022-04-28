@@ -9,10 +9,10 @@ DNAME	varchar2		14	NULL
 LOC	varchar2		13	NULL
 
 Create Table dept( -- 테이블 생성
-dno number (2) not null,
-dname varchar2(14) null,
-loc varchar2(13) null
-);
+    dno number (2) not null,
+    dname varchar2(14) null,
+    loc varchar2(13) null
+    );
 
 
 2. 다음 표에 명시된 대로 EMP 테이블을 생성 하시오. 
@@ -24,10 +24,10 @@ ENAME	varchar2		10	NULL
 DNO	number		2	NULL
 
 Create Table EMP( -- 테이블 생성
-eno number (4) not null,
-ename varchar2(10) null,
-dno number(2) null
-);
+    eno number (4) not null,
+    ename varchar2(10) null,
+    dno number(2) null
+    );
 
 3. 긴이름을 넣을 수 있도록 EMP 테이블의 ENAME 컬럼의 크기를 늘리시오. 
 
