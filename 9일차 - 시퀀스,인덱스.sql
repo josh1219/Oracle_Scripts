@@ -291,10 +291,11 @@ where username in ('HR','USERTEST01');
 
 -- 계정에게 테이블 스페이스 변경 (SYSTEM ==> USERS) 변경
 Alter user usertest01
-default tablespace users
-temporary tablespace temp
+default tablespace users        -- DataFile 저장 : 객체가 저장되는 공간 (테이블, 뷰, 트리거, 인덱스 . . . . .)
+temporary tablespace temp       -- LOG를 저장 : DML (Insert, Update, Delete)
+                                -- LOG를 호칭 할 때 Transaction Log. 시스템의 문제 발생시 백업 시점이 아니라 오류난 시점까지 복원
 
--- 계정에게 Users 테이블 스페이스를 사용 할 수 있는 공간 할당.
+-- 계정에게 Users 테이블 스페이스를 사용 할 수 있는 공간 할당. ( users 테이블 스페이스에 2mb를 사용 공간 할당)
 Alter user usertest01
 quota 2m on users;
 
