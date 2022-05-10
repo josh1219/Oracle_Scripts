@@ -300,6 +300,24 @@ Alter user usertest01
 quota 2m on users;
 
 
+-- Object Privileges : 테이블, 뷰, 트리거, 함수,
+    -- 저장 프로시저, 시퀀스, 인덱스에 부여되는 권한 할당.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 문제 : usertest02 계정을 생성후에 users 테이블 스페이스에서 테이블 (tb12) 생성 후 insert.
 
 
